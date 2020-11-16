@@ -1,7 +1,7 @@
 {
   "name": "starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "starter git general purpose html, css/sass, js",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
