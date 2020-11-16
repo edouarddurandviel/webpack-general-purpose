@@ -1,0 +1,10 @@
+{
+  "app.css": "/app.css",
+  "app.js": "/app.js",
+  "runtime.js": "/runtime.js",
+  "vendors.js": "/vendors.js",
+  "images/article.jpg": "/images/article.jpg",
+  "images/article@grande.jpg": "/images/article@grande.jpg",
+  "images/article@petite.jpg": "/images/article@petite.jpg",
+  "index.html": "/index.html"
+}
