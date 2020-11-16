@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'Barlow-regular';
+    src: url('./fonts/barlow/Barlow-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+// @font-face {
+//   font-family: 'icomoon';
+//   src:  url('./fonts/icomoon/icomoon.eot?wh6qya');
+//   src:  url('./fonts/icomoon/icomoon.eot?wh6qya#iefix') format('embedded-opentype'),
+//     url('./fonts/icomoon/icomoon.ttf?wh6qya') format('truetype'),
+//     url('./fonts/icomoon/icomoon.woff?wh6qya') format('woff'),
+//     url('./fonts/icomoon/icomoon.svg?wh6qya#icomoon') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+//   font-display: block;
+// }
+
+[class^="i-"], [class*=" i-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.i-arrow-right:before {
+  content: "\e900";
+}
+.i-arrow-right-small:before {
+  content: "\e901";
+}
+.i-carte:before {
+  content: "\e902";
+}
+.i-delete:before {
+  content: "\e903";
+}
+.i-etoile:before {
+  content: "\e904";
+}
+.i-facebook:before {
+  content: "\e905";
+}
+.i-facebook-plain:before {
+  content: "\e906";
+}
+.i-instagram:before {
+  content: "\e908";
+}
+.i-linkedin:before {
+  content: "\e909";
+}
+.i-linkedin-plain:before {
+  content: "\e90a";
+}
+.i-liste:before {
+  content: "\e90c";
+}
+.i-mixte:before {
+  content: "\e90d";
+}
+.i-ref:before {
+  content: "\e90e";
+}
+.i-surfacesvg:before {
+  content: "\e90f";
+}
+.i-terrain:before {
+  content: "\e911";
+}
+.i-twitter:before {
+  content: "\e912";
+}
+.i-twitter-plain:before {
+  content: "\e913";
+}
+.i-youtube:before {
+  content: "\e915";
+}
+

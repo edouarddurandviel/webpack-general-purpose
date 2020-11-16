@@ -1,0 +1,64 @@
+/*===================================
+
+                COLORS
+
+===================================*/
+$color-default: rgb(255, 255, 255);
+$color-primary: rgb(162, 192, 55);
+$color-secondary: rgb(95, 113, 32);
+
+$text-color-default : #333333;
+$text-color-primary : #ffffff;
+$text-color-secondary: #999999;
+
+$color-shade-amount: 15%;
+$color-trans-amount: 0.5;
+
+// MAP VARIABLES COULEURS
+$colors: (
+
+    /* COULEUR DE FOND */
+    default: (
+        base: $color-default,
+        light: lighten($color-default, $color-shade-amount),
+        dark: darken($color-default, $color-shade-amount),
+        trans: transparentize($color-default, $color-trans-amount)
+    ),
+    primary: (
+        base: $color-primary,
+        light: lighten($color-primary, $color-shade-amount),
+        dark: darken($color-primary, $color-shade-amount),
+        trans: transparentize($color-primary, $color-trans-amount)
+    ),
+    secondary: (
+        base: $color-secondary,
+        light: lighten($color-secondary, $color-shade-amount),
+        dark: darken($color-secondary, $color-shade-amount),
+        trans: transparentize($color-secondary, $color-trans-amount)
+    ),
+
+    /* COULEUR DE TEXTE */
+    text-default: $text-color-default,
+    text-primary: $text-color-primary,
+    text-secondary: $text-color-secondary
+);
+
+
+/*
+*
+*
+*   Création de la fonction color() pour simplifié l'accès au map sans réutiliser map-get()
+*   UTILISATION : 
+*   color(text-primary) || color(default, base)
+*
+*
+*/ 
+@function color($color-name, $color-variant:null) {
+    // color variant est optionnel
+    @if ($color-variant != null) {
+    // map inception
+        @return map-get(map-get($colors, $color-name), $color-variant);
+    } @else {
+        @return map-get($colors, $color-name);
+    }
+}

@@ -1,0 +1,82 @@
+// Body
+$body-bg: rgb(221, 240, 209);
+
+// Borders
+$list-group-border-color: darken($body-bg, 10%);
+$card-border-color: darken($body-bg, 10%);
+
+// Brands
+$brand-primary: rgb(63, 63, 63);
+$brand-info: #8eb4cb;
+$brand-success: #2ab27b;
+$brand-warning: #cbb956;
+$brand-danger: #bf5329;
+
+// colors
+$primary:       rgb(71, 71, 71);
+// $secondary:     $gray-600 !default;
+$success:       #2ab27b;
+// $info:          $cyan !default;
+$warning:       #cbb956;
+$danger:        #bf5329;
+
+
+// Typography
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+
+// forms
+
+// Inputs
+$input-color-placeholder: #666;
+
+// Typography
+$font-size-base: .875rem; // 14px
+$line-height-base: 2.1;
+$text-color: #2a2d2e;
+
+// Inputs
+$input-font-size: 1.6rem;
+
+$input-color: #333333;
+$input-border-color: #cccbcb;
+$input-box-shadow: none;
+
+$input-border-radius: 0;
+$input-border-radius-lg: 0;
+$input-border-radius-sm: 0;
+
+$input-focus-bg: #fff;
+$input-focus-border-color: $input-border-color;
+$input-focus-color: $text-color;
+$input-focus-width: .1rem;
+$input-focus-box-shadow: none;
+$input-plaintext-color: #333333;
+
+$form-text-margin-top: .25rem;
+
+$form-check-input-gutter: 1.25rem;
+$form-check-input-margin-y: .3rem;
+$form-check-input-margin-x: .25rem;
+
+$form-check-inline-margin-x: .75rem;
+$form-check-inline-input-margin-x: .3125rem;
+
+// Breadcrumbs
+
+$breadcrumb-font-size:              1.5rem;
+
+$breadcrumb-padding-y:              1rem;
+$breadcrumb-padding-x:              1rem;
+$breadcrumb-item-padding:           1rem;
+
+$breadcrumb-margin-bottom:          2rem;
+
+$breadcrumb-bg:                     rgb(80, 103, 206);
+$breadcrumb-divider-color:          rgb(255, 255, 255);
+$breadcrumb-active-color:           rgb(80, 103, 206);
+$breadcrumb-divider:                quote("=>");
+
+$breadcrumb-border-radius:          0rem;
+
+
+

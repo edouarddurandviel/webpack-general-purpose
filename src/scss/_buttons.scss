@@ -1,0 +1,99 @@
+/*
+*
+*
+*   DECLARATION DE NOS VARIABLES POUR LES BOUTONS AFIN DE LES GENERER AUTOMATIQUEMENT
+*
+*
+*/
+
+$btn-size : (
+    sm: (
+        fontSize: 1.2rem,
+        lineHeihgt: 1.5rem,
+        pad: 0.3rem 0.8rem,
+    ),
+    md: (
+        fontSize: 1.5rem,
+        lineHeihgt: 2rem,
+        pad: 1rem 3rem,
+    ),
+    lg: (
+        fontSize: 1.9rem,
+        lineHeihgt: 2rem,
+        pad: 1.4rem 5rem,
+    ),
+    xl: (
+        fontSize: 2.2rem,
+        lineHeihgt: 2.8rem,
+        pad: 1.1rem 6rem,
+    )
+);
+
+$btn-theme: (
+    default: (
+        text: color(primary, base),
+        bg: color(default, base),
+        border: color(primary, base),
+        hoverText: color(secondary, base),
+        hoverBg: color(default, base),
+        hoverBorder: color(secondary, base),
+    ),
+    primary: (
+        text: color(default, base),
+        bg: color(primary, base),
+        border: color(primary, base),
+        hoverText: color(primary, base),
+        hoverBg: color(default, base),
+        hoverBorder: color(primary, base),
+    ),
+    secondary: (
+        text: color(default, base),
+        bg: color(secondary, base),
+        border: color(secondary, base),
+        hoverText: color(secondary, base),
+        hoverBg: transparent,
+        hoverBorder: color(secondary, base),
+    ),
+    selectpicker: (
+        text: color(primary, base),
+        bg: color(default, base),
+        border: color(default, base),
+        hoverText: color(primary, base),
+        hoverBg: color(default, base),
+        hoverBorder: color(default, base),
+    ),
+    //  dark: (
+    //     text: color(default, base),
+    //     bg: color(darks, base),
+    //     border: color(darks, base),
+    //     hoverText: color(darks, base),
+    //     hoverBg: transparent,
+    //     hoverBorder: color(darks, base),
+    // )
+);
+
+
+
+.btn { 
+  
+    &__icon {
+        color: inherit; font-size: 1em;
+    }
+
+    //size
+    @each $key, $value in $btn-size {
+        &--#{$key} {
+            font-size: map-get($value, fontSize); padding: map-get($value, pad); line-height: map-get($value, lineHeihgt);
+        }
+    }
+
+    // theme
+    @each $key, $value in $btn-theme {
+        &--#{$key} {
+            background: map-get($value, bg) !important; color: map-get($value, text) !important; border-color: map-get($value, border) !important; border-radius: 0; 
+            &:hover, &:focus, &.active {
+                background: map-get($value, hoverBg) !important; color: map-get($value, hoverText) !important; border-color: map-get($value, hoverBorder) !important;
+            }
+        }
+    }
+}
