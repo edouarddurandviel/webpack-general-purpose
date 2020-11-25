@@ -6,22 +6,19 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 module.exports = {
-  entry: { // several entries or just one entry for all JAVASCRIPT entry name = app
+  entry: { 
+    // several entries or just one entry for all JAVASCRIPT entry name = app
       app: './src/entry.js',
   },
   plugins: [
-    // new webpack.DefinePlugin({ "process.env.NODE_ENV": JSON.stringify("production") }),
-    new CleanWebpackPlugin(['public/*']), // clean cache
-    // new MiniCssExtractPlugin({
-    //   // Options similar to the same options in webpackOptions.output
-    //   // both options are optional
-    //   filename: process.env.NODE_ENV === 'production' ? '[name].[contenthash:8].css' : '[name].css',
-    //   //chunkFilename: '[id].css',
-    // }),
+    // clean cache
+    new CleanWebpackPlugin(['public/*']),
+    // create a manifest file
     new ManifestPlugin({
       title: 'latest',
     }),
-    new webpack.HashedModuleIdsPlugin(), // module identifier -> keep vendor file unchanged when other files are beeing modified
+    // module identifier -> keep vendor file unchanged when other files are beeing modified
+    new webpack.HashedModuleIdsPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
@@ -97,7 +94,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: process.env.NODE_ENV === 'production' ? '[name].[contenthash:8].[ext]' : '[name].[ext]',
+              name: '[name].[ext]',
               outputPath: 'fonts/'
             }
           }
