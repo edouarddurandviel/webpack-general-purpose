@@ -15,12 +15,12 @@ module.exports = merge(common, {
     new TerserPlugin({
       cache: true,
       parallel: true,
-      sourceMap: false, // Must be set to true if using source-maps in production
+      sourceMap: false,
     }),
     new UglifyJsPlugin({
       cache: false,
       parallel: true,
-      extractComments: 'all',
+      extractComments: true,
     }),
   ],
   minimize: true,
