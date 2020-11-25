@@ -1,9 +1,10 @@
 <?php
 // router.php 
+$route = false;
 if (preg_match('/\.(?:png|jpg|jpeg|gif)$/', $_SERVER["REQUEST_URI"])) {
     return false; // Serve the requested resource as-is 
 } else {
-    echo "<p>Thanks for using php-server :)</p>";
+    $route = true;
 }
 
 // get manifest
@@ -15,7 +16,7 @@ $manifest = json_decode($string, true);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Starter webpack</title>
+    <title><?php if($route){echo 'PHP ';} ?>Starter webpack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="/public<?php echo $manifest['app.css'] ?>">
