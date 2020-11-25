@@ -1,3 +1,16 @@
+<?php
+// router.php 
+if (preg_match('/\.(?:png|jpg|jpeg|gif)$/', $_SERVER["REQUEST_URI"])) {
+    return false; // Serve the requested resource as-is 
+} else {
+    echo "<p>Thanks for using php-server :)</p>";
+}
+
+// get manifest
+$string = file_get_contents("public/manifest.json");
+$manifest = json_decode($string, true);
+
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +18,7 @@
     <title>Starter webpack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="/public<?php echo $manifest['app.css'] ?>">
 
     <style>
         .pre-hide {opacity: 0}
@@ -68,9 +82,9 @@
                 <h2 class="news-title">news title</h2>
                 <div class="news-description">news description</div>
                 <picture class="news-picture">
-                    <source media="(min-width:650px)" srcset="images/article@grande.jpg">
-                    <source media="(min-width:465px)" srcset="images/article@petite.jpg">
-                        <img class="news-picture-img" src="images/article.jpg" alt="Flowers">
+                    <source media="(min-width:650px)" srcset="/public/images/article@grande.jpg">
+                    <source media="(min-width:465px)" srcset="/public/images/article@petite.jpg">
+                        <img class="news-picture-img" src="/public/images/article.jpg" alt="Flowers">
                 </picture>
             </articles>
 
@@ -78,9 +92,9 @@
                 <h2 class="news-title">news title</h2>
                 <div class="news-description">news description</div>
                 <picture class="news-picture">
-                    <source media="(min-width:650px)" srcset="images/article@grande.jpg">
-                    <source media="(min-width:465px)" srcset="images/article@petite.jpg">
-                        <img class="news-picture-img" src="images/article.jpg" alt="Flowers">
+                    <source media="(min-width:650px)" srcset="/public/images/article@grande.jpg">
+                    <source media="(min-width:465px)" srcset="/public/images/article@petite.jpg">
+                        <img class="news-picture-img" src="/public/images/article.jpg" alt="Flowers">
                 </picture>
             </articles>
 
@@ -88,9 +102,9 @@
                 <h2 class="news-title">news title</h2>
                 <div class="news-description">news description</div>
                 <picture class="news-picture">
-                    <source media="(min-width:650px)" srcset="images/article@grande.jpg">
-                    <source media="(min-width:465px)" srcset="images/article@petite.jpg">
-                        <img class="news-picture-img" src="images/article.jpg" alt="Flowers">
+                    <source media="(min-width:650px)" srcset="/public/images/article@grande.jpg">
+                    <source media="(min-width:465px)" srcset="/public/images/article@petite.jpg">
+                        <img class="news-picture-img" src="/public/images/article.jpg" alt="Flowers">
                 </picture>
             </articles>
 
@@ -120,4 +134,7 @@
     </div>
     </div>
 </body>
+<script src="/public<?php echo $manifest['app.js'] ?>"></script>
+<script src="/public<?php echo $manifest['runtime.js'] ?>"></script>
+<script src="/public<?php echo $manifest['vendors.js'] ?>"></script>
 </html>

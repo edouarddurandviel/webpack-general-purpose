@@ -8,11 +8,26 @@ body {
 }
 
 svg {
-    display: inline-block; width: 1em; height: 1em; stroke-width: 0; stroke: currentColor; fill: currentColor; -webkit-backface-visibility: hidden; backface-visibility: hidden; 
+    display: inline-block; width: 1em; height: 1em; stroke-width: 0; 
+    stroke: currentColor; fill: currentColor; -webkit-backface-visibility: 
+    hidden; backface-visibility: hidden; 
+}
+
+button:focus{
+    outline: none !important;
 }
 
 .shadow{
     box-shadow: 0rem 0rem 4rem 0rem rgb(155, 155, 155);
     height: 100vh;
     background: rgb(184, 222, 224);
+}
+
+.news{
+    &-picture{
+        &-img{
+            display: block;
+            width: 100%;
+        }
+    }
 }

@@ -6,19 +6,18 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 module.exports = {
- 
   entry: { // several entries or just one entry for all JAVASCRIPT entry name = app
       app: './src/entry.js',
   },
   plugins: [
-    new webpack.DefinePlugin({ "process.env.NODE_ENV": JSON.stringify("production") }),
+    // new webpack.DefinePlugin({ "process.env.NODE_ENV": JSON.stringify("production") }),
     new CleanWebpackPlugin(['public/*']), // clean cache
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: process.env.NODE_ENV === 'production' ? '[name].[contenthash:8].css' : '[name].css',
-      //chunkFilename: '[id].css',
-    }),
+    // new MiniCssExtractPlugin({
+    //   // Options similar to the same options in webpackOptions.output
+    //   // both options are optional
+    //   filename: process.env.NODE_ENV === 'production' ? '[name].[contenthash:8].css' : '[name].css',
+    //   //chunkFilename: '[id].css',
+    // }),
     new ManifestPlugin({
       title: 'latest',
     }),
@@ -28,12 +27,6 @@ module.exports = {
       jQuery: 'jquery'
     }),
   ],
-  output: {
-    globalObject: "this",
-    filename: process.env.NODE_ENV === 'production' ? '[name].[contenthash:8].js' : '[name].js',
-    path: path.resolve(__dirname, 'public'),
-    publicPath: '/', 
-  },
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {

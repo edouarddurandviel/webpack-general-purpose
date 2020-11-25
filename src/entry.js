@@ -1,6 +1,6 @@
 
 // bootstrap assets
-import './libraries';
+import './_bootstrap';
 
 import './images/article.jpg';
 import './images/article@petite.jpg';

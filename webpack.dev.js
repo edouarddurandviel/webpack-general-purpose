@@ -2,6 +2,7 @@ const path = require('path');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 module.exports = merge(common, {
@@ -24,6 +25,12 @@ module.exports = merge(common, {
     inline: true
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+        filename: '[name].css',
+      //chunkFilename: '[id].css',
+    }),
      // for dev only
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'index.html'),
@@ -31,5 +38,12 @@ module.exports = merge(common, {
       excludeChunks: ['base'],
       filename: 'index.html',
      }),
-  ]
+  ],
+  output: {
+    globalObject: "this",
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'public'),
+    publicPath: '/', 
+  },
 });
+
